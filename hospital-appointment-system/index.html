@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="City Care Hospital - view doctors, browse departments and request an appointment.">
+  <title>City Care Hospital | Appointment System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER & NAVIGATION ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">City Care Hospital</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#departments">Departments</a></li>
+          <li><a href="#doctors">Doctors</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HOME ===================== -->
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Welcome to City Care Hospital</h1>
+        <p>Quality healthcare with experienced doctors across six specialised departments.
+           Find the right doctor and request an appointment online in minutes.</p>
+        <div class="hero-buttons">
+          <a href="#appointment" class="btn btn-primary">Book an Appointment</a>
+          <a href="#doctors" class="btn btn-secondary">Find a Doctor</a>
+        </div>
+        <ul class="hero-highlights">
+          <li><strong>6</strong> Departments</li>
+          <li><strong>8</strong> Specialist Doctors</li>
+          <li><strong>24/7</strong> Emergency Care</li>
+        </ul>
+        <p class="demo-notice">
+          This website is a front-end student demonstration only. Please do not enter real patient information.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== DEPARTMENTS ===================== -->
+    <section id="departments" class="section">
+      <div class="container">
+        <h2>Our Departments</h2>
+        <p class="section-intro">Browse our medical departments to find the care you need.</p>
+
+        <div class="departments-grid">
+          <article class="department-card" data-department="Cardiology">
+            <h3>Cardiology</h3>
+            <p>Diagnosis and treatment of heart and blood vessel conditions.</p>
+          </article>
+
+          <article class="department-card" data-department="Neurology">
+            <h3>Neurology</h3>
+            <p>Care for disorders of the brain, spinal cord and nervous system.</p>
+          </article>
+
+          <article class="department-card" data-department="Pediatrics">
+            <h3>Pediatrics</h3>
+            <p>Medical care for infants, children and teenagers.</p>
+          </article>
+
+          <article class="department-card" data-department="Orthopedics">
+            <h3>Orthopedics</h3>
+            <p>Treatment of bones, joints, muscles and sports injuries.</p>
+          </article>
+
+          <article class="department-card" data-department="Dermatology">
+            <h3>Dermatology</h3>
+            <p>Care for skin, hair and nail conditions.</p>
+          </article>
+
+          <article class="department-card" data-department="Ophthalmology">
+            <h3>Ophthalmology</h3>
+            <p>Eye examinations, vision care and eye surgery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOCTORS ===================== -->
+    <section id="doctors" class="section section-alt">
+      <div class="container">
+        <h2>Our Doctors</h2>
+        <p class="section-intro">Meet our specialists and check when they are available.</p>
+
+        <!-- Search box (search logic will be added in js/script.js) -->
+        <div class="search-box">
+          <label for="doctor-search">Search doctors</label>
+          <input type="search" id="doctor-search" placeholder="Search by name, specialization or department">
+        </div>
+
+        <div class="doctors-grid" id="doctors-list">
+
+          <article class="doctor-card" data-department="Cardiology">
+            <h3 class="doctor-name">Dr. Ahmed Hassan</h3>
+            <p><span class="label">Specialization:</span> Cardiologist</p>
+            <p><span class="label">Department:</span> Cardiology</p>
+            <p><span class="label">Available Day:</span> Sunday &amp; Tuesday</p>
+            <p><span class="label">Available Time:</span> 9:00 AM – 1:00 PM</p>
+          </article>
+
+          <article class="doctor-card" data-department="Cardiology">
+            <h3 class="doctor-name">Dr. Sara Al-Mansouri</h3>
+            <p><span class="label">Specialization:</span> Interventional Cardiologist</p>
+            <p><span class="label">Department:</span> Cardiology</p>
+            <p><span class="label">Available Day:</span> Monday &amp; Wednesday</p>
+            <p><span class="label">Available Time:</span> 2:00 PM – 6:00 PM</p>
+          </article>
+
+          <article class="doctor-card" data-department="Neurology">
+            <h3 class="doctor-name">Dr. Omar Khalid</h3>
+            <p><span class="label">Specialization:</span> Neurologist</p>
+            <p><span class="label">Department:</span> Neurology</p>
+            <p><span class="label">Available Day:</span> Sunday &amp; Thursday</p>
+            <p><span class="label">Available Time:</span> 10:00 AM – 2:00 PM</p>
+          </article>
+
+          <article class="doctor-card" data-department="Pediatrics">
+            <h3 class="doctor-name">Dr. Layla Ibrahim</h3>
+            <p><span class="label">Specialization:</span> Pediatrician</p>
+            <p><span class="label">Department:</span> Pediatrics</p>
+            <p><span class="label">Available Day:</span> Monday &amp; Tuesday</p>
+            <p><span class="label">Available Time:</span> 8:00 AM – 12:00 PM</p>
+          </article>
+
+          <article class="doctor-card" data-department="Pediatrics">
+            <h3 class="doctor-name">Dr. Yusuf Rahman</h3>
+            <p><span class="label">Specialization:</span> Pediatric Surgeon</p>
+            <p><span class="label">Department:</span> Pediatrics</p>
+            <p><span class="label">Available Day:</span> Wednesday</p>
+            <p><span class="label">Available Time:</span> 1:00 PM – 5:00 PM</p>
+          </article>
+
+          <article class="doctor-card" data-department="Orthopedics">
+            <h3 class="doctor-name">Dr. Khalid Nasser</h3>
+            <p><span class="label">Specialization:</span> Orthopedic Surgeon</p>
+            <p><span class="label">Department:</span> Orthopedics</p>
+            <p><span class="label">Available Day:</span> Sunday &amp; Wednesday</p>
+            <p><span class="label">Available Time:</span> 9:00 AM – 3:00 PM</p>
+          </article>
+
+          <article class="doctor-card" data-department="Dermatology">
+            <h3 class="doctor-name">Dr. Noor Al-Harbi</h3>
+            <p><span class="label">Specialization:</span> Dermatologist</p>
+            <p><span class="label">Department:</span> Dermatology</p>
+            <p><span class="label">Available Day:</span> Tuesday &amp; Thursday</p>
+            <p><span class="label">Available Time:</span> 11:00 AM – 4:00 PM</p>
+          </article>
+
+          <article class="doctor-card" data-department="Ophthalmology">
+            <h3 class="doctor-name">Dr. Hana Saleh</h3>
+            <p><span class="label">Specialization:</span> Ophthalmologist</p>
+            <p><span class="label">Department:</span> Ophthalmology</p>
+            <p><span class="label">Available Day:</span> Monday &amp; Thursday</p>
+            <p><span class="label">Available Time:</span> 9:00 AM – 1:00 PM</p>
+          </article>
+
+        </div>
+
+        <p id="no-results" class="no-results" hidden>No doctors match your search.</p>
+      </div>
+    </section>
+
+    <!-- ===================== APPOINTMENT FORM ===================== -->
+    <section id="appointment" class="section">
+      <div class="container">
+        <h2>Request an Appointment</h2>
+        <p class="section-intro">Fill in the form below and our team will confirm your appointment.
+          <strong>Demo only – do not use real patient information.</strong></p>
+
+        <form id="appointment-form" class="appointment-form" novalidate>
+
+          <div class="form-group">
+            <label for="patient-name">Patient Name</label>
+            <input type="text" id="patient-name" name="patientName" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="e.g. john@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 5555 1234" required>
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department</label>
+            <select id="department" name="department" required>
+              <option value="">-- Select a department --</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Neurology">Neurology</option>
+              <option value="Pediatrics">Pediatrics</option>
+              <option value="Orthopedics">Orthopedics</option>
+              <option value="Dermatology">Dermatology</option>
+              <option value="Ophthalmology">Ophthalmology</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="doctor">Doctor</label>
+            <select id="doctor" name="doctor" required>
+              <option value="">-- Select a doctor --</option>
+              <option value="Dr. Ahmed Hassan" data-department="Cardiology">Dr. Ahmed Hassan (Cardiology)</option>
+              <option value="Dr. Sara Al-Mansouri" data-department="Cardiology">Dr. Sara Al-Mansouri (Cardiology)</option>
+              <option value="Dr. Omar Khalid" data-department="Neurology">Dr. Omar Khalid (Neurology)</option>
+              <option value="Dr. Layla Ibrahim" data-department="Pediatrics">Dr. Layla Ibrahim (Pediatrics)</option>
+              <option value="Dr. Yusuf Rahman" data-department="Pediatrics">Dr. Yusuf Rahman (Pediatrics)</option>
+              <option value="Dr. Khalid Nasser" data-department="Orthopedics">Dr. Khalid Nasser (Orthopedics)</option>
+              <option value="Dr. Noor Al-Harbi" data-department="Dermatology">Dr. Noor Al-Harbi (Dermatology)</option>
+              <option value="Dr. Hana Saleh" data-department="Ophthalmology">Dr. Hana Saleh (Ophthalmology)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Request</button>
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <p><strong>City Care Hospital</strong> · 123 Health Street · Phone: 0000 0000 · info@citycare.example</p>
+      <p>&copy; 2026 City Care Hospital – Student Project (front-end demo only)</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

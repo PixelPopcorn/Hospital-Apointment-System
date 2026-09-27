@@ -1,0 +1,21 @@
+/* =========================================================
+   City Care Hospital - Stylesheet
+   Owner: CSS Developer (Student 2)
+   The HTML uses these classes: .container, .site-header, .main-nav,
+   .hero, .section, .section-alt, .departments-grid, .department-card,
+   .doctors-grid, .doctor-card, .search-box, .appointment-form,
+   .form-group, .form-row, .btn, .btn-primary, .btn-secondary, .site-footer
+   ========================================================= */
+
+/* Minimal base so the page is readable before styling is added */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
