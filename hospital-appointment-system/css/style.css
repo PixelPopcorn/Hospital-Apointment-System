@@ -1,16 +1,20 @@
 /* ==========================================
-   1. Global Styles & CSS Variables
+   1. Global Styles & CSS Variables (Emerald Wellness Theme)
    ================================---------- */
 :root {
-    --primary-color: #0284c7;       /* Medical Blue */
-    --primary-hover: #0369a1;
-    --secondary-color: #f0f9ff;     /* Light soft blue tint */
-    --text-color: #1e293b;          /* Dark slate for high readability */
-    --text-light: #64748b;          /* Muted grey for descriptions */
-    --border-color: #cbd5e1;        /* Clean grey border */
+    --primary-color: #059669;       /* Deep Emerald / Modern Wellness */
+    --primary-hover: #047857;
+    --primary-light: #10b981;
+    --secondary-color: #ecfdf5;     /* Soft mint tint */
+    --text-color: #0f172a;          /* Deep slate for high contrast */
+    --text-light: #475569;          /* Balanced secondary text */
+    --border-color: #e2e8f0;        /* Subtle crisp border */
     --white: #ffffff;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --radius: 8px;
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -24,54 +28,60 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--text-color);
     background-color: #f8fafc;
-    line-height: 1.6;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1240px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
 }
 
 /* ==========================================
    2. Header & Navigation Menu
    ================================---------- */
 .site-header {
-    background-color: var(--white);
-    box-shadow: var(--shadow);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 2rem;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 800;
     color: var(--primary-color);
     text-decoration: none;
+    letter-spacing: -0.03em;
 }
 
 .nav-list {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .nav-list a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-light);
     font-weight: 600;
-    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    transition: var(--transition);
 }
 
 .nav-list a:hover {
@@ -82,7 +92,7 @@ body {
    3. Sections & Common Layouts
    ================================---------- */
 .section {
-    padding: 5rem 0;
+    padding: 7rem 0;
 }
 
 .section-alt {
@@ -90,70 +100,84 @@ body {
 }
 
 .section h2 {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text-color);
+    letter-spacing: -0.03em;
+    font-weight: 800;
 }
 
 .section-intro {
     text-align: center;
     color: var(--text-light);
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
+    margin-bottom: 4rem;
+    font-size: 1.15rem;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ==========================================
    4. Hero Section
    ================================---------- */
 .hero {
-    background: linear-gradient(rgba(2, 132, 199, 0.88), rgba(3, 105, 161, 0.92)), url('../images/hospital-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.92), rgba(4, 120, 87, 0.95)), url('../images/hospital-bg.jpg') center/cover no-repeat;
     color: var(--white);
     text-align: center;
-    padding: 7rem 1.5rem;
+    padding: 9rem 1.5rem;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
-    opacity: 0.95;
+    font-size: 1.25rem;
+    max-width: 720px;
+    margin: 0 auto 2.5rem auto;
+    opacity: 0.9;
+    font-weight: 400;
 }
 
 .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
+    gap: 1.25rem;
+    margin-bottom: 3.5rem;
 }
 
 .hero-highlights {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2.5rem;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    gap: 3.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
 }
 
 .hero-highlights strong {
-    font-size: 1.4rem;
-    color: #38bdf8;
+    font-size: 1.75rem;
+    color: #34d399;
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 800;
 }
 
 .demo-notice {
-    font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.15);
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
     display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 /* ==========================================
@@ -162,38 +186,41 @@ body {
 .departments-grid,
 .doctors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 2rem;
 }
 
 .department-card,
 .doctor-card {
     background: var(--white);
     border-radius: var(--radius);
-    padding: 1.75rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 4px solid var(--primary-color);
+    padding: 2.25rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--primary-color);
 }
 
 .department-card:hover,
 .doctor-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(5, 150, 105, 0.3);
 }
 
 .department-card h3,
 .doctor-card h3 {
-    color: var(--primary-color);
+    color: var(--text-color);
     margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 .department-card p,
 .doctor-card p {
     font-size: 0.95rem;
     color: var(--text-light);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 .doctor-card .label {
@@ -205,12 +232,13 @@ body {
    6. Search Box & Filters
    ================================---------- */
 .search-box {
-    max-width: 600px;
-    margin: 0 auto 2.5rem auto;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
     background: var(--white);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
 }
 
 .search-box label {
@@ -218,20 +246,24 @@ body {
     font-weight: 600;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+    color: var(--text-color);
 }
 
 .search-box input[type="search"] {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.9rem 1.2rem;
     border: 1px solid var(--border-color);
-    border-radius: var(--radius);
+    border-radius: calc(var(--radius) - 4px);
     font-size: 1rem;
+    background-color: #f8fafc;
+    transition: var(--transition);
 }
 
 .search-box input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.12);
 }
 
 .no-results {
@@ -246,11 +278,12 @@ body {
    ================================---------- */
 .appointment-form {
     background: var(--white);
-    padding: 3rem;
+    padding: 4rem;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    max-width: 750px;
+    box-shadow: var(--shadow-lg);
+    max-width: 780px;
     margin: 0 auto;
+    border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -268,23 +301,27 @@ body {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-color);
+    font-size: 0.95rem;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
-    padding: 0.85rem;
+    padding: 0.9rem 1.1rem;
     border: 1px solid var(--border-color);
-    border-radius: var(--radius);
+    border-radius: calc(var(--radius) - 4px);
     font-size: 1rem;
-    background-color: var(--white);
+    background-color: #f8fafc;
+    color: var(--text-color);
+    transition: var(--transition);
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.12);
 }
 
 .form-message {
@@ -297,46 +334,54 @@ body {
    8. Buttons
    ================================---------- */
 .btn {
-    display: inline-block;
-    padding: 0.85rem 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 2rem;
     border: none;
-    border-radius: var(--radius);
+    border-radius: calc(var(--radius) - 4px);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: var(--transition);
     text-align: center;
+    letter-spacing: 0.01em;
 }
 
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--white);
     width: 100%;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
 }
 
 .btn-primary:hover {
     background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
 }
 
 .btn-secondary {
     background-color: transparent;
     color: var(--white);
-    border: 2px solid var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.7);
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--white);
 }
 
 /* ==========================================
    9. Footer & Responsive Design
    ================================---------- */
 .site-footer {
-    background-color: #0f172a;
+    background-color: #022c22;
     color: var(--white);
     text-align: center;
-    padding: 3rem 1.5rem;
+    padding: 4rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .site-footer p {
@@ -347,23 +392,27 @@ body {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
     .header-inner {
         flex-direction: column;
         gap: 1rem;
     }
 
     .nav-list {
-        gap: 1rem;
+        gap: 1.25rem;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .hero {
-        padding: 5rem 1rem;
+        padding: 6rem 1rem;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .hero-buttons {
@@ -372,7 +421,7 @@ body {
 
     .hero-highlights {
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 1.5rem;
     }
 
     .form-row {
@@ -381,6 +430,6 @@ body {
     }
 
     .appointment-form {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
     }
 }
