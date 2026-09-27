@@ -1,19 +1,27 @@
-/* =========================================================
-   City Care Hospital - JavaScript
-   Owner: JavaScript Developer (Student 3)
+const searchInput = document.getElementById('doctor-search');
+const doctorCards = document.querySelectorAll('#doctors-list .doctor-card');
+const noResults = document.getElementById('no-results');
 
-   Element IDs available in index.html:
-   - #doctor-search      search input for doctors
-   - #doctors-list       container of .doctor-card elements
-   - #no-results         message shown when search finds nothing
-   - #appointment-form   the appointment form
-   - #department, #doctor (selects; doctor options have data-department)
-   - #form-message       place to show success / error messages
-   ========================================================= */
+searchInput.addEventListener('input', function () {
+  const query = searchInput.value.toLowerCase();
+  let matchCount = 0;
 
-// TODO: doctor search
-// TODO: filter doctor dropdown by selected department
-// TODO: appointment form validation and confirmation message
-// TODO: KILL RIOT GAMES
+  doctorCards.forEach(function (card) {
+    const cardText = card.textContent.toLowerCase();
+
+    if (cardText.includes(query)) {
+      card.hidden = false;
+      matchCount++;
+    } else {
+      card.hidden = true;
+    }
+  });
+
+  if (matchCount === 0) {
+    noResults.hidden = false;
+  } else {
+    noResults.hidden = true;
+  }
+});
 
 
