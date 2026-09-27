@@ -24,4 +24,21 @@ searchInput.addEventListener('input', function () {
   }
 });
 
+//filter department
+
+const departmentSelector = document.getElementById("department");
+const DoctorSelector = document.getElementById("doctor");
+const Options = document.getElementById("option[data-department]");
+
+departmentSelector.addEventListener("change", function() {
+   const selectedDept = departmentSelector.value;
+   Options.forEach(function(option){
+      if (selectedDept === ''|| option.dataset.department ===
+          selectedDept){
+         option.hidden= false;
+      } else {
+         option.hidden= true;
+      }
+   });
+});
 
