@@ -42,3 +42,26 @@ departmentSelector.addEventListener("change", function() {
    });
 });
 
+const form = document.getElementById("appointment-form");
+const formmessage = document.getElementById("form-message");
+
+form.addEventListener("submit", function(event){
+event.preventDefault
+})
+
+const name = document.getElementById('patient-name').value;
+const email = document.getElementById('email').value;
+const phone = document.getElementById('phone').value;
+const department = departmentSelect.value;
+const doctor = doctorSelect.value;
+const date = document.getElementById('date').value;
+const time = document.getElementById('time').value;
+
+if ( name === "" ||doctor === "" ||department === "" ||email === "" ||phone === "" ||date === "" ||time === "" )
+{formmessage.textContent = "please fill in all fields!";
+ formmessage.style.color = 'red';
+return
+}
+formmessage.textContent ="thank you" + name + "! your appointment with" + doctor + "has been reserved.";
+formmessage.style.color = "green";
+form.reset();
